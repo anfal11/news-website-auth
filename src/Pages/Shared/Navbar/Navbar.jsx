@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <div>
+        <div className="mt-5">
             <h2 className="text-2xl font-poppins">Navbar</h2>
         </div>
     );
