@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import user from '../../../assets/user.png'
 
 const Navbar = () => {
 
@@ -44,7 +45,12 @@ const Navbar = () => {
       }
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end gap-2">
+  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img src={user} />
+        </div>
+      </label>
     <Link to='' className="btn bg-[#403F3F] text-white hover:bg-[#403F3F]">Log In</Link>
   </div>
 </div>
