@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const LeftSideNav = () => {
   const [categories, setCategories] = useState([]);
@@ -18,13 +18,14 @@ const LeftSideNav = () => {
 
       <div>
         {categories.map((category) => (
-          <Link
+          <NavLink
             to={`/category/${category.id}`}
             key={category.id}
             className="block mt-2 text-base text-[#706F6F] hover:text-black hover:bg-[#E7E7E7] p-3 text-center rounded-md"
           >
+          {/* {({ isActive, isPending }) =>isPending ? "pending" : isActive ? "bg-[#E7E7E7] text-black" : ""} */}
             {category.name}
-          </Link>
+          </NavLink>
         ))}
       </div>
     </div>
