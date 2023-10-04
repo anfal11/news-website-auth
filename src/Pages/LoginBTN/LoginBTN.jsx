@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const LoginBTN = () => {
   const [passHide, setPassHide] = useState(true);
+  const navigate = useNavigate();
 
+    const {user , logIn} = useContext(AuthContext);
 
   const togglePasswordVisibility = () => {
     setPassHide(!passHide);
@@ -12,9 +15,19 @@ const LoginBTN = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
-    console.log(form.get("email") + " " + form.get("password"));
+    const email = form.get("email");
+    const password = form.get("password");
+
+    // log in user
+    logIn(email, password) 
+    .then((result) => {
+        console.log(result.user);
+        navigate('/');
+    })
+    .catch((error) => {
+        console.error(error.message);
+    })
   };
 
   return (
