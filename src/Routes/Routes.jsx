@@ -9,6 +9,7 @@ import Career from "../Pages/Career/Career";
 import LoginBTN from "../Pages/LoginBTN/LoginBTN";
 import Register from "../Pages/Register/Register";
 import NewsDetails from "../Components/NewsDetails/NewsDetails";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
   const routes = createBrowserRouter([
     {
@@ -39,7 +40,7 @@ import NewsDetails from "../Components/NewsDetails/NewsDetails";
       },
       {
         path: "/news/:id",
-        element: <NewsDetails></NewsDetails>
+        element: <PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>
       }
     ]
   },

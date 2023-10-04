@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -6,6 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 const LoginBTN = () => {
   const [passHide, setPassHide] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
 
     const {user , logIn} = useContext(AuthContext);
 
@@ -23,7 +24,7 @@ const LoginBTN = () => {
     logIn(email, password) 
     .then((result) => {
         console.log(result.user);
-        navigate('/');
+        navigate(location?.state ? location.state : "/");
     })
     .catch((error) => {
         console.error(error.message);
