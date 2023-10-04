@@ -51,7 +51,7 @@ const Navbar = () => {
           <img src={user} />
         </div>
       </label>
-    <Link to='' className="btn bg-[#403F3F] text-white hover:bg-[#403F3F]">Log In</Link>
+    <Link to='/login' className="btn bg-[#403F3F] text-white hover:bg-[#403F3F]">Log In</Link>
   </div>
 </div>
         </div>

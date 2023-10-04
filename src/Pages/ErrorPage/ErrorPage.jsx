@@ -15,9 +15,9 @@ const ErrorPage = () => {
           <p className="text-gray-100 mt-2 mb-6">We are sorry, but the page you requested was not found</p>
           <Link
             className="bg-green-400 px-5 py-3 text-sm shadow-sm font-medium tracking-wider text-gray-50 rounded-full hover:shadow-lg"
-            to="/"
+            onClick={() => window.history.back()}
           >
-            Go to Home
+            Go Back
           </Link>
         </div>
       </div>

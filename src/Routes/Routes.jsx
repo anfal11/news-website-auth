@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import About from "../Pages/About/About";
 import Career from "../Pages/Career/Career";
+import LoginBTN from "../Pages/LoginBTN/LoginBTN";
 
   const routes = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ import Career from "../Pages/Career/Career";
       {
         path: "/career",
         element: <Career></Career>,
+      },
+      {
+        path: "/login",
+        element: <LoginBTN/>,
       }
     ]
   },
