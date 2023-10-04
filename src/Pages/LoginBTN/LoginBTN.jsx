@@ -8,7 +8,7 @@ const LoginBTN = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-    const {user , logIn} = useContext(AuthContext);
+    const { logIn} = useContext(AuthContext);
 
   const togglePasswordVisibility = () => {
     setPassHide(!passHide);

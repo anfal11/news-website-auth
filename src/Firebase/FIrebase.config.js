@@ -1,12 +1,14 @@
 import { initializeApp } from "firebase/app";
 
+
+console.log();
 const firebaseConfig = {
-  apiKey: "AIzaSyDcUcv1sx-d0TLF6Mrb7HvX26VTW54QWNw",
-  authDomain: "news-website-auth.firebaseapp.com",
-  projectId: "news-website-auth",
-  storageBucket: "news-website-auth.appspot.com",
-  messagingSenderId: "258247713038",
-  appId: "1:258247713038:web:e14c1e57c2271db516b75f"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 
