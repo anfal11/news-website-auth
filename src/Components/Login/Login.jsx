@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
-  const {signInWithGoogle} = useContext(AuthContext);
+  const {signInWithGoogle,signInWithGithub} = useContext(AuthContext);
 
   const googleSignIn = (socialMedia) => {
     socialMedia()
@@ -15,10 +15,17 @@ const Login = () => {
       console.error(error.message);
     });
   }
-
   const githubSignIn = (socialMedia) => {
     socialMedia()
+    .then((result) => {
+      console.log(result.user);
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
   }
+
+
     return (
         <div>
                   <div className='p-4'>
@@ -26,7 +33,7 @@ const Login = () => {
         <button onClick={()=>googleSignIn(signInWithGoogle)} className="btn btn-outline w-full mt-3 mb-2 text-blue-500">
         <FaGoogle></FaGoogle>
         Login With Google</button>
-        <button onClick={()=>githubSignIn(signInWithGoogle)} className="btn btn-outline w-full">
+        <button onClick={()=>githubSignIn(signInWithGithub)} className="btn btn-outline w-full">
         <AiFillGithub></AiFillGithub>
         Login With Github</button>
       </div>
