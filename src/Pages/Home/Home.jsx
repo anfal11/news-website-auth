@@ -8,6 +8,7 @@ import NewsCard from "./NewsCard";
 
 const Home = () => {
 
+    
     const newsData = useLoaderData();
     console.log(newsData);
     return (
