@@ -8,6 +8,7 @@ import About from "../Pages/About/About";
 import Career from "../Pages/Career/Career";
 import LoginBTN from "../Pages/LoginBTN/LoginBTN";
 import Register from "../Pages/Register/Register";
+import NewsDetails from "../Components/NewsDetails/NewsDetails";
 
   const routes = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ import Register from "../Pages/Register/Register";
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/news/:id",
+        element: <NewsDetails></NewsDetails>
       }
     ]
   },
