@@ -19,7 +19,7 @@ import NewsDetails from "../Components/NewsDetails/NewsDetails";
         {
         path: "/",
         element: <Home />,
-        loader: () => fetch("news.json"),
+        loader: () => fetch("/news.json"),
       },
       {
         path: "/about",
