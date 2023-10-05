@@ -9,21 +9,19 @@ const LeftSideNav = () => {
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
+
   return (
     <div className="mt-5">
       <h2 className="text-xl font-semibold text-[#403F3F] mb-5">
-        {" "}
-        All Category
+        All Categories
       </h2>
-
       <div>
         {categories.map((category) => (
           <NavLink
-            to={`/category/${category.id}`}
+            to={`/category/${category.id}`} // Use category.id in the route
             key={category.id}
             className="block mt-2 text-base text-[#706F6F] hover:text-black hover:bg-[#E7E7E7] p-3 text-center rounded-md"
           >
-          {/* {({ isActive, isPending }) =>isPending ? "pending" : isActive ? "bg-[#E7E7E7] text-black" : ""} */}
             {category.name}
           </NavLink>
         ))}

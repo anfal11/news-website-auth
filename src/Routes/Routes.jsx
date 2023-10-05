@@ -10,6 +10,7 @@ import LoginBTN from "../Pages/LoginBTN/LoginBTN";
 import Register from "../Pages/Register/Register";
 import NewsDetails from "../Components/NewsDetails/NewsDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import CategoryPosts from "../Pages/Shared/LeftSideNav/CategoryPosts";
 
   const routes = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
       {
         path: "/news/:id",
         element: <PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
+        // loader: (object) => fetch(`/news.json/${object.params.id}`),
+      },
+      {
+        path: "/category/:id",
+        element: <PrivateRoute><CategoryPosts></CategoryPosts></PrivateRoute>,
         // loader: (object) => fetch(`/news.json/${object.params.id}`),
       }
     ]
